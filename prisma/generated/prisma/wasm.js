@@ -120,10 +120,15 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
   Serializable: 'Serializable'
 });
 
-exports.Prisma.UserScalarFieldEnum = {
+exports.Prisma.AppealScalarFieldEnum = {
   id: 'id',
-  email: 'email',
-  name: 'name'
+  topic: 'topic',
+  message: 'message',
+  resolution: 'resolution',
+  cancellation: 'cancellation',
+  status: 'status',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
 };
 
 exports.Prisma.SortOrder = {
@@ -140,10 +145,15 @@ exports.Prisma.NullsOrder = {
   first: 'first',
   last: 'last'
 };
-
+exports.Status = exports.$Enums.Status = {
+  NEW: 'NEW',
+  INPROGRESS: 'INPROGRESS',
+  COMPLETED: 'COMPLETED',
+  CANCELED: 'CANCELED'
+};
 
 exports.Prisma.ModelName = {
-  User: 'User'
+  Appeal: 'Appeal'
 };
 
 /**
