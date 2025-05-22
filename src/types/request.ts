@@ -6,3 +6,7 @@ export interface IRequestCreate {
 export interface IResponseComplete {
     resolution?: string;
 }
+
+export interface IResponseCancel {
+    cancellation?: string;
+}

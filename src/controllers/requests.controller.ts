@@ -1,8 +1,8 @@
 import { Request, Response, NextFunction } from "express";
 import prisma from "../prisma-client";
-import {RequestComplete, RequestCreate} from "../schemas/request.schema";
+import {RequestCreate} from "../schemas/request.schema";
 import {parseZodErrors} from "../lib/parseZodErrors";
-import {IRequestCreate, IResponseComplete} from "../types/request";
+import {IRequestCreate, IResponseCancel, IResponseComplete} from "../types/request";
 
 export const createRequest = async (req: Request, res: Response, next: NextFunction) => {
     try {
@@ -40,21 +40,12 @@ export const startProcessingRequest = async (req: Request, res: Response, next: 
 export const completeRequest = async (req: Request, res: Response, next: NextFunction) => {
     try {
         const {id} = req.params
-        const body = req.body as IResponseComplete;
-        const parsed = RequestComplete.safeParse(body);
-        if(!parsed.success) {
-            const parsedErrors = parseZodErrors(parsed.error.issues)
-            console.log("Zod error === ", parsedErrors);
-            res.status(400).json(parsedErrors);
-            return
-        }
-
-        const {resolution} = parsed.data
+        const {resolution} = (req.body ?? {}) as IResponseComplete;
 
         const searchRequest = await prisma.request.findUnique({where: {id}, select: {status: true, resolution: true}});
 
         if (!searchRequest) {
-            res.status(409).json({"message": "request not found"})
+            res.status(404).json({"message": "request not found"})
         } else if(searchRequest.status === "COMPLETED" && searchRequest.resolution) {
             res.status(409).json({"message": "request already completed"})
         }
@@ -65,6 +56,30 @@ export const completeRequest = async (req: Request, res: Response, next: NextFun
             select: {id: true, resolution: true, status: true}
         })
         res.status(200).json(resolvedRequest);
+    } catch (error) {
+        next(error);
+    }
+}
+
+export const cancelRequest = async (req: Request, res: Response, next: NextFunction) => {
+    try {
+        const {id} = req.params
+        const {cancellation} = (req.body ?? {}) as IResponseCancel;
+
+        const searchRequest = await prisma.request.findUnique({where: {id}, select: {status: true, cancellation: true}});
+
+        if (!searchRequest) {
+            res.status(404).json({"message": "request not found"})
+        } else if(searchRequest.status === "CANCELED" && searchRequest.cancellation) {
+            res.status(409).json({"message": "request already canceled"})
+        }
+
+        const canceledRequest = await prisma.request.update({
+            where: {id},
+            data: {status: "CANCELED", cancellation,},
+            select: {id: true, cancellation: true, status: true}
+        })
+        res.status(200).json(canceledRequest);
     } catch (error) {
         next(error);
     }
