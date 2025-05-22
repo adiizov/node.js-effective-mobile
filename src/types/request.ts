@@ -1,5 +1,8 @@
 export interface IRequestCreate {
     topic: string;
     message: string;
-    status: "NEW" | "INPROGRESS" | "COMPLETED" | "CANCELED",
+}
+
+export interface IResponseComplete {
+    resolution?: string;
 }
