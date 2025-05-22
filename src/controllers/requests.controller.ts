@@ -20,3 +20,21 @@ export const createRequest = async (req: Request, res: Response, next: NextFunct
         next(error);
     }
 };
+
+export const startProcessingRequest = async (req: Request, res: Response, next: NextFunction) => {
+    try {
+        const {id} = req.params
+        const searchRequest = await prisma.request.findUnique({where: {id}, select: {status: true}});
+        if (!searchRequest) {
+            res.status(409).json({"message": "request not found"})
+        } else if (searchRequest.status === "INPROGRESS") {
+            res.status(400).json({"message": "request already in progress"})
+        }
+        await prisma.request.update({where: {id}, data: {status: "INPROGRESS"},})
+        res.status(200).json({"message": "request started processing"});
+    } catch (error) {
+        next(error);
+    }
+}
+
+
