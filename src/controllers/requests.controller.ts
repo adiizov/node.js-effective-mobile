@@ -37,6 +37,7 @@ export const startProcessingRequest = async (req: Request, res: Response, next: 
     }
 }
 
+
 export const completeRequest = async (req: Request, res: Response, next: NextFunction) => {
     try {
         const {id} = req.params
