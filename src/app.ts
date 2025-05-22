@@ -1,14 +1,14 @@
 import express from 'express';
-import itemRoutes from './routes/item.routes';
 import { errorHandler } from './middlewares/errorHandler';
 import route from "./routes/route";
+import requestsRoutes from "./routes/requests.routes";
 
 const app = express();
 
 app.use(express.json());
 
 app.use('/', route);
-app.use('/api/items', itemRoutes);
+app.use('/api/appeals', requestsRoutes);
 
 app.use(errorHandler);
 
