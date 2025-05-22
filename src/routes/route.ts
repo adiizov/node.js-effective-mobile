@@ -2,8 +2,8 @@ import express, {Router} from "express";
 
 const router = Router();
 
-router.get('/', (_, res: express.Response) => {
-    res.send("hello world")
+router.get('/', async (_, res: express.Response) => {
+    res.send("Hello world")
 })
 
 export default router;
