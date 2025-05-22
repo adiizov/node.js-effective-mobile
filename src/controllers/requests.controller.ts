@@ -51,17 +51,17 @@ export const completeRequest = async (req: Request, res: Response, next: NextFun
 
         const {resolution} = parsed.data
 
-        const searchRequest = await prisma.request.findUnique({where: {id}, select: {status: true}});
+        const searchRequest = await prisma.request.findUnique({where: {id}, select: {status: true, resolution: true}});
 
         if (!searchRequest) {
             res.status(409).json({"message": "request not found"})
-        } else if (searchRequest.status === "COMPLETED") {
-            res.status(400).json({"message": "request already completed"})
+        } else if(searchRequest.status === "COMPLETED" && searchRequest.resolution) {
+            res.status(409).json({"message": "request already completed"})
         }
 
         const resolvedRequest = await prisma.request.update({
             where: {id},
-            data: {status: "COMPLETED", resolution: resolution ?? null,},
+            data: {status: "COMPLETED", resolution,},
             select: {id: true, resolution: true, status: true}
         })
         res.status(200).json(resolvedRequest);
