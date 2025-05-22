@@ -8,8 +8,22 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
+enum Status {
+  NEW
+  INPROGRESS
+  COMPLETED
+  CANCELED
+}
+
+model Appeal {
+  id           String   @id @default(cuid())
+  topic        String
+  message      String
+  resolution   String
+  cancellation String
+  status       Status   @default(NEW)
+  createdAt    DateTime @default(now()) @map(name: "created_at")
+  updatedAt    DateTime @updatedAt @map(name: "updated_at")
+
+  @@map(name: "appeals")
 }
