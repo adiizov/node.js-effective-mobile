@@ -15,7 +15,7 @@ enum Status {
   CANCELED
 }
 
-model Appeal {
+model Request {
   id           String   @id @default(cuid())
   topic        String
   message      String
@@ -25,5 +25,5 @@ model Appeal {
   createdAt    DateTime @default(now()) @map(name: "created_at")
   updatedAt    DateTime @updatedAt @map(name: "updated_at")
 
-  @@map(name: "appeals")
+  @@map(name: "requests")
 }
