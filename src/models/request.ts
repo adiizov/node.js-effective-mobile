@@ -1,6 +1,4 @@
-export interface Request {
-    id: number;
-    name: string;
+export interface IRequestCreate {
+    topic: string;
+    message: string;
 }
-
-export let items: Request[] = [];

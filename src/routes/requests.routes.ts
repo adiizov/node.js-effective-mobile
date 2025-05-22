@@ -1,18 +1,14 @@
 import { Router } from 'express';
-import {
-    createItem,
-    getItems,
-    getItemById,
-    updateItem,
-    deleteItem,
-} from '../controllers/requests.controller';
+import {createRequest} from "../controllers/requests.controller";
 
 const router = Router();
 
-router.get('/', getItems);
-router.get('/:id', getItemById);
-router.post('/', createItem);
-router.put('/:id', updateItem);
-router.delete('/:id', deleteItem);
+router.post('/', createRequest);
+// router.post('/:id/start', getRequestToProcess);
+// router.post('/:id/complete', completeRequest);
+// router.post('/:id/cancel', cancelRequest);
+// router.get('/', getRequests);
+// router.post('/cancel-all-in-progress', cancelAllInProgress);
+
 
 export default router;

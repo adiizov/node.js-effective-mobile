@@ -14,10 +14,10 @@ export type PrismaPromise<T> = $Public.PrismaPromise<T>
 
 
 /**
- * Model Appeal
+ * Model Request
  * 
  */
-export type Appeal = $Result.DefaultSelection<Prisma.$AppealPayload>
+export type Request = $Result.DefaultSelection<Prisma.$RequestPayload>
 
 /**
  * Enums
@@ -45,8 +45,8 @@ export const Status: typeof $Enums.Status
  * @example
  * ```
  * const prisma = new PrismaClient()
- * // Fetch zero or more Appeals
- * const appeals = await prisma.appeal.findMany()
+ * // Fetch zero or more Requests
+ * const requests = await prisma.request.findMany()
  * ```
  *
  *
@@ -66,8 +66,8 @@ export class PrismaClient<
    * @example
    * ```
    * const prisma = new PrismaClient()
-   * // Fetch zero or more Appeals
-   * const appeals = await prisma.appeal.findMany()
+   * // Fetch zero or more Requests
+   * const requests = await prisma.request.findMany()
    * ```
    *
    *
@@ -164,14 +164,14 @@ export class PrismaClient<
   }>>
 
       /**
-   * `prisma.appeal`: Exposes CRUD operations for the **Appeal** model.
+   * `prisma.request`: Exposes CRUD operations for the **Request** model.
     * Example usage:
     * ```ts
-    * // Fetch zero or more Appeals
-    * const appeals = await prisma.appeal.findMany()
+    * // Fetch zero or more Requests
+    * const requests = await prisma.request.findMany()
     * ```
     */
-  get appeal(): Prisma.AppealDelegate<ExtArgs, ClientOptions>;
+  get request(): Prisma.RequestDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -612,7 +612,7 @@ export namespace Prisma {
 
 
   export const ModelName: {
-    Appeal: 'Appeal'
+    Request: 'Request'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -631,81 +631,81 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "appeal"
+      modelProps: "request"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
-      Appeal: {
-        payload: Prisma.$AppealPayload<ExtArgs>
-        fields: Prisma.AppealFieldRefs
+      Request: {
+        payload: Prisma.$RequestPayload<ExtArgs>
+        fields: Prisma.RequestFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.AppealFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$AppealPayload> | null
+            args: Prisma.RequestFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RequestPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.AppealFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$AppealPayload>
+            args: Prisma.RequestFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RequestPayload>
           }
           findFirst: {
-            args: Prisma.AppealFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$AppealPayload> | null
+            args: Prisma.RequestFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RequestPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.AppealFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$AppealPayload>
+            args: Prisma.RequestFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RequestPayload>
           }
           findMany: {
-            args: Prisma.AppealFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$AppealPayload>[]
+            args: Prisma.RequestFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RequestPayload>[]
           }
           create: {
-            args: Prisma.AppealCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$AppealPayload>
+            args: Prisma.RequestCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RequestPayload>
           }
           createMany: {
-            args: Prisma.AppealCreateManyArgs<ExtArgs>
+            args: Prisma.RequestCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           createManyAndReturn: {
-            args: Prisma.AppealCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$AppealPayload>[]
+            args: Prisma.RequestCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RequestPayload>[]
           }
           delete: {
-            args: Prisma.AppealDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$AppealPayload>
+            args: Prisma.RequestDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RequestPayload>
           }
           update: {
-            args: Prisma.AppealUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$AppealPayload>
+            args: Prisma.RequestUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RequestPayload>
           }
           deleteMany: {
-            args: Prisma.AppealDeleteManyArgs<ExtArgs>
+            args: Prisma.RequestDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.AppealUpdateManyArgs<ExtArgs>
+            args: Prisma.RequestUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateManyAndReturn: {
-            args: Prisma.AppealUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$AppealPayload>[]
+            args: Prisma.RequestUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RequestPayload>[]
           }
           upsert: {
-            args: Prisma.AppealUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$AppealPayload>
+            args: Prisma.RequestUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RequestPayload>
           }
           aggregate: {
-            args: Prisma.AppealAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateAppeal>
+            args: Prisma.RequestAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateRequest>
           }
           groupBy: {
-            args: Prisma.AppealGroupByArgs<ExtArgs>
-            result: $Utils.Optional<AppealGroupByOutputType>[]
+            args: Prisma.RequestGroupByArgs<ExtArgs>
+            result: $Utils.Optional<RequestGroupByOutputType>[]
           }
           count: {
-            args: Prisma.AppealCountArgs<ExtArgs>
-            result: $Utils.Optional<AppealCountAggregateOutputType> | number
+            args: Prisma.RequestCountArgs<ExtArgs>
+            result: $Utils.Optional<RequestCountAggregateOutputType> | number
           }
         }
       }
@@ -793,7 +793,7 @@ export namespace Prisma {
     omit?: Prisma.GlobalOmitConfig
   }
   export type GlobalOmitConfig = {
-    appeal?: AppealOmit
+    request?: RequestOmit
   }
 
   /* Types for Logging */
@@ -889,16 +889,16 @@ export namespace Prisma {
    */
 
   /**
-   * Model Appeal
+   * Model Request
    */
 
-  export type AggregateAppeal = {
-    _count: AppealCountAggregateOutputType | null
-    _min: AppealMinAggregateOutputType | null
-    _max: AppealMaxAggregateOutputType | null
+  export type AggregateRequest = {
+    _count: RequestCountAggregateOutputType | null
+    _min: RequestMinAggregateOutputType | null
+    _max: RequestMaxAggregateOutputType | null
   }
 
-  export type AppealMinAggregateOutputType = {
+  export type RequestMinAggregateOutputType = {
     id: string | null
     topic: string | null
     message: string | null
@@ -909,7 +909,7 @@ export namespace Prisma {
     updatedAt: Date | null
   }
 
-  export type AppealMaxAggregateOutputType = {
+  export type RequestMaxAggregateOutputType = {
     id: string | null
     topic: string | null
     message: string | null
@@ -920,7 +920,7 @@ export namespace Prisma {
     updatedAt: Date | null
   }
 
-  export type AppealCountAggregateOutputType = {
+  export type RequestCountAggregateOutputType = {
     id: number
     topic: number
     message: number
@@ -933,7 +933,7 @@ export namespace Prisma {
   }
 
 
-  export type AppealMinAggregateInputType = {
+  export type RequestMinAggregateInputType = {
     id?: true
     topic?: true
     message?: true
@@ -944,7 +944,7 @@ export namespace Prisma {
     updatedAt?: true
   }
 
-  export type AppealMaxAggregateInputType = {
+  export type RequestMaxAggregateInputType = {
     id?: true
     topic?: true
     message?: true
@@ -955,7 +955,7 @@ export namespace Prisma {
     updatedAt?: true
   }
 
-  export type AppealCountAggregateInputType = {
+  export type RequestCountAggregateInputType = {
     id?: true
     topic?: true
     message?: true
@@ -967,79 +967,79 @@ export namespace Prisma {
     _all?: true
   }
 
-  export type AppealAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type RequestAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Appeal to aggregate.
+     * Filter which Request to aggregate.
      */
-    where?: AppealWhereInput
+    where?: RequestWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Appeals to fetch.
+     * Determine the order of Requests to fetch.
      */
-    orderBy?: AppealOrderByWithRelationInput | AppealOrderByWithRelationInput[]
+    orderBy?: RequestOrderByWithRelationInput | RequestOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: AppealWhereUniqueInput
+    cursor?: RequestWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Appeals from the position of the cursor.
+     * Take `±n` Requests from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Appeals.
+     * Skip the first `n` Requests.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned Appeals
+     * Count returned Requests
     **/
-    _count?: true | AppealCountAggregateInputType
+    _count?: true | RequestCountAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the minimum value
     **/
-    _min?: AppealMinAggregateInputType
+    _min?: RequestMinAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the maximum value
     **/
-    _max?: AppealMaxAggregateInputType
+    _max?: RequestMaxAggregateInputType
   }
 
-  export type GetAppealAggregateType<T extends AppealAggregateArgs> = {
-        [P in keyof T & keyof AggregateAppeal]: P extends '_count' | 'count'
+  export type GetRequestAggregateType<T extends RequestAggregateArgs> = {
+        [P in keyof T & keyof AggregateRequest]: P extends '_count' | 'count'
       ? T[P] extends true
         ? number
-        : GetScalarType<T[P], AggregateAppeal[P]>
-      : GetScalarType<T[P], AggregateAppeal[P]>
+        : GetScalarType<T[P], AggregateRequest[P]>
+      : GetScalarType<T[P], AggregateRequest[P]>
   }
 
 
 
 
-  export type AppealGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: AppealWhereInput
-    orderBy?: AppealOrderByWithAggregationInput | AppealOrderByWithAggregationInput[]
-    by: AppealScalarFieldEnum[] | AppealScalarFieldEnum
-    having?: AppealScalarWhereWithAggregatesInput
+  export type RequestGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: RequestWhereInput
+    orderBy?: RequestOrderByWithAggregationInput | RequestOrderByWithAggregationInput[]
+    by: RequestScalarFieldEnum[] | RequestScalarFieldEnum
+    having?: RequestScalarWhereWithAggregatesInput
     take?: number
     skip?: number
-    _count?: AppealCountAggregateInputType | true
-    _min?: AppealMinAggregateInputType
-    _max?: AppealMaxAggregateInputType
+    _count?: RequestCountAggregateInputType | true
+    _min?: RequestMinAggregateInputType
+    _max?: RequestMaxAggregateInputType
   }
 
-  export type AppealGroupByOutputType = {
+  export type RequestGroupByOutputType = {
     id: string
     topic: string
     message: string
@@ -1048,26 +1048,26 @@ export namespace Prisma {
     status: $Enums.Status
     createdAt: Date
     updatedAt: Date
-    _count: AppealCountAggregateOutputType | null
-    _min: AppealMinAggregateOutputType | null
-    _max: AppealMaxAggregateOutputType | null
+    _count: RequestCountAggregateOutputType | null
+    _min: RequestMinAggregateOutputType | null
+    _max: RequestMaxAggregateOutputType | null
   }
 
-  type GetAppealGroupByPayload<T extends AppealGroupByArgs> = Prisma.PrismaPromise<
+  type GetRequestGroupByPayload<T extends RequestGroupByArgs> = Prisma.PrismaPromise<
     Array<
-      PickEnumerable<AppealGroupByOutputType, T['by']> &
+      PickEnumerable<RequestGroupByOutputType, T['by']> &
         {
-          [P in ((keyof T) & (keyof AppealGroupByOutputType))]: P extends '_count'
+          [P in ((keyof T) & (keyof RequestGroupByOutputType))]: P extends '_count'
             ? T[P] extends boolean
               ? number
-              : GetScalarType<T[P], AppealGroupByOutputType[P]>
-            : GetScalarType<T[P], AppealGroupByOutputType[P]>
+              : GetScalarType<T[P], RequestGroupByOutputType[P]>
+            : GetScalarType<T[P], RequestGroupByOutputType[P]>
         }
       >
     >
 
 
-  export type AppealSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type RequestSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     topic?: boolean
     message?: boolean
@@ -1076,9 +1076,9 @@ export namespace Prisma {
     status?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-  }, ExtArgs["result"]["appeal"]>
+  }, ExtArgs["result"]["request"]>
 
-  export type AppealSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type RequestSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     topic?: boolean
     message?: boolean
@@ -1087,9 +1087,9 @@ export namespace Prisma {
     status?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-  }, ExtArgs["result"]["appeal"]>
+  }, ExtArgs["result"]["request"]>
 
-  export type AppealSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type RequestSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     topic?: boolean
     message?: boolean
@@ -1098,9 +1098,9 @@ export namespace Prisma {
     status?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-  }, ExtArgs["result"]["appeal"]>
+  }, ExtArgs["result"]["request"]>
 
-  export type AppealSelectScalar = {
+  export type RequestSelectScalar = {
     id?: boolean
     topic?: boolean
     message?: boolean
@@ -1111,10 +1111,10 @@ export namespace Prisma {
     updatedAt?: boolean
   }
 
-  export type AppealOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "topic" | "message" | "resolution" | "cancellation" | "status" | "createdAt" | "updatedAt", ExtArgs["result"]["appeal"]>
+  export type RequestOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "topic" | "message" | "resolution" | "cancellation" | "status" | "createdAt" | "updatedAt", ExtArgs["result"]["request"]>
 
-  export type $AppealPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Appeal"
+  export type $RequestPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Request"
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
       id: string
@@ -1125,136 +1125,136 @@ export namespace Prisma {
       status: $Enums.Status
       createdAt: Date
       updatedAt: Date
-    }, ExtArgs["result"]["appeal"]>
+    }, ExtArgs["result"]["request"]>
     composites: {}
   }
 
-  type AppealGetPayload<S extends boolean | null | undefined | AppealDefaultArgs> = $Result.GetResult<Prisma.$AppealPayload, S>
+  type RequestGetPayload<S extends boolean | null | undefined | RequestDefaultArgs> = $Result.GetResult<Prisma.$RequestPayload, S>
 
-  type AppealCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<AppealFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: AppealCountAggregateInputType | true
+  type RequestCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<RequestFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: RequestCountAggregateInputType | true
     }
 
-  export interface AppealDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Appeal'], meta: { name: 'Appeal' } }
+  export interface RequestDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Request'], meta: { name: 'Request' } }
     /**
-     * Find zero or one Appeal that matches the filter.
-     * @param {AppealFindUniqueArgs} args - Arguments to find a Appeal
+     * Find zero or one Request that matches the filter.
+     * @param {RequestFindUniqueArgs} args - Arguments to find a Request
      * @example
-     * // Get one Appeal
-     * const appeal = await prisma.appeal.findUnique({
+     * // Get one Request
+     * const request = await prisma.request.findUnique({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUnique<T extends AppealFindUniqueArgs>(args: SelectSubset<T, AppealFindUniqueArgs<ExtArgs>>): Prisma__AppealClient<$Result.GetResult<Prisma.$AppealPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findUnique<T extends RequestFindUniqueArgs>(args: SelectSubset<T, RequestFindUniqueArgs<ExtArgs>>): Prisma__RequestClient<$Result.GetResult<Prisma.$RequestPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find one Appeal that matches the filter or throw an error with `error.code='P2025'`
+     * Find one Request that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {AppealFindUniqueOrThrowArgs} args - Arguments to find a Appeal
+     * @param {RequestFindUniqueOrThrowArgs} args - Arguments to find a Request
      * @example
-     * // Get one Appeal
-     * const appeal = await prisma.appeal.findUniqueOrThrow({
+     * // Get one Request
+     * const request = await prisma.request.findUniqueOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUniqueOrThrow<T extends AppealFindUniqueOrThrowArgs>(args: SelectSubset<T, AppealFindUniqueOrThrowArgs<ExtArgs>>): Prisma__AppealClient<$Result.GetResult<Prisma.$AppealPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findUniqueOrThrow<T extends RequestFindUniqueOrThrowArgs>(args: SelectSubset<T, RequestFindUniqueOrThrowArgs<ExtArgs>>): Prisma__RequestClient<$Result.GetResult<Prisma.$RequestPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first Appeal that matches the filter.
+     * Find the first Request that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {AppealFindFirstArgs} args - Arguments to find a Appeal
+     * @param {RequestFindFirstArgs} args - Arguments to find a Request
      * @example
-     * // Get one Appeal
-     * const appeal = await prisma.appeal.findFirst({
+     * // Get one Request
+     * const request = await prisma.request.findFirst({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirst<T extends AppealFindFirstArgs>(args?: SelectSubset<T, AppealFindFirstArgs<ExtArgs>>): Prisma__AppealClient<$Result.GetResult<Prisma.$AppealPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findFirst<T extends RequestFindFirstArgs>(args?: SelectSubset<T, RequestFindFirstArgs<ExtArgs>>): Prisma__RequestClient<$Result.GetResult<Prisma.$RequestPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first Appeal that matches the filter or
+     * Find the first Request that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {AppealFindFirstOrThrowArgs} args - Arguments to find a Appeal
+     * @param {RequestFindFirstOrThrowArgs} args - Arguments to find a Request
      * @example
-     * // Get one Appeal
-     * const appeal = await prisma.appeal.findFirstOrThrow({
+     * // Get one Request
+     * const request = await prisma.request.findFirstOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirstOrThrow<T extends AppealFindFirstOrThrowArgs>(args?: SelectSubset<T, AppealFindFirstOrThrowArgs<ExtArgs>>): Prisma__AppealClient<$Result.GetResult<Prisma.$AppealPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findFirstOrThrow<T extends RequestFindFirstOrThrowArgs>(args?: SelectSubset<T, RequestFindFirstOrThrowArgs<ExtArgs>>): Prisma__RequestClient<$Result.GetResult<Prisma.$RequestPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find zero or more Appeals that matches the filter.
+     * Find zero or more Requests that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {AppealFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {RequestFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
-     * // Get all Appeals
-     * const appeals = await prisma.appeal.findMany()
+     * // Get all Requests
+     * const requests = await prisma.request.findMany()
      * 
-     * // Get first 10 Appeals
-     * const appeals = await prisma.appeal.findMany({ take: 10 })
+     * // Get first 10 Requests
+     * const requests = await prisma.request.findMany({ take: 10 })
      * 
      * // Only select the `id`
-     * const appealWithIdOnly = await prisma.appeal.findMany({ select: { id: true } })
+     * const requestWithIdOnly = await prisma.request.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends AppealFindManyArgs>(args?: SelectSubset<T, AppealFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$AppealPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+    findMany<T extends RequestFindManyArgs>(args?: SelectSubset<T, RequestFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RequestPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
     /**
-     * Create a Appeal.
-     * @param {AppealCreateArgs} args - Arguments to create a Appeal.
+     * Create a Request.
+     * @param {RequestCreateArgs} args - Arguments to create a Request.
      * @example
-     * // Create one Appeal
-     * const Appeal = await prisma.appeal.create({
+     * // Create one Request
+     * const Request = await prisma.request.create({
      *   data: {
-     *     // ... data to create a Appeal
+     *     // ... data to create a Request
      *   }
      * })
      * 
      */
-    create<T extends AppealCreateArgs>(args: SelectSubset<T, AppealCreateArgs<ExtArgs>>): Prisma__AppealClient<$Result.GetResult<Prisma.$AppealPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    create<T extends RequestCreateArgs>(args: SelectSubset<T, RequestCreateArgs<ExtArgs>>): Prisma__RequestClient<$Result.GetResult<Prisma.$RequestPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Create many Appeals.
-     * @param {AppealCreateManyArgs} args - Arguments to create many Appeals.
+     * Create many Requests.
+     * @param {RequestCreateManyArgs} args - Arguments to create many Requests.
      * @example
-     * // Create many Appeals
-     * const appeal = await prisma.appeal.createMany({
+     * // Create many Requests
+     * const request = await prisma.request.createMany({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      *     
      */
-    createMany<T extends AppealCreateManyArgs>(args?: SelectSubset<T, AppealCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends RequestCreateManyArgs>(args?: SelectSubset<T, RequestCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Create many Appeals and returns the data saved in the database.
-     * @param {AppealCreateManyAndReturnArgs} args - Arguments to create many Appeals.
+     * Create many Requests and returns the data saved in the database.
+     * @param {RequestCreateManyAndReturnArgs} args - Arguments to create many Requests.
      * @example
-     * // Create many Appeals
-     * const appeal = await prisma.appeal.createManyAndReturn({
+     * // Create many Requests
+     * const request = await prisma.request.createManyAndReturn({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      * 
-     * // Create many Appeals and only return the `id`
-     * const appealWithIdOnly = await prisma.appeal.createManyAndReturn({
+     * // Create many Requests and only return the `id`
+     * const requestWithIdOnly = await prisma.request.createManyAndReturn({
      *   select: { id: true },
      *   data: [
      *     // ... provide data here
@@ -1264,28 +1264,28 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    createManyAndReturn<T extends AppealCreateManyAndReturnArgs>(args?: SelectSubset<T, AppealCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$AppealPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+    createManyAndReturn<T extends RequestCreateManyAndReturnArgs>(args?: SelectSubset<T, RequestCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RequestPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Delete a Appeal.
-     * @param {AppealDeleteArgs} args - Arguments to delete one Appeal.
+     * Delete a Request.
+     * @param {RequestDeleteArgs} args - Arguments to delete one Request.
      * @example
-     * // Delete one Appeal
-     * const Appeal = await prisma.appeal.delete({
+     * // Delete one Request
+     * const Request = await prisma.request.delete({
      *   where: {
-     *     // ... filter to delete one Appeal
+     *     // ... filter to delete one Request
      *   }
      * })
      * 
      */
-    delete<T extends AppealDeleteArgs>(args: SelectSubset<T, AppealDeleteArgs<ExtArgs>>): Prisma__AppealClient<$Result.GetResult<Prisma.$AppealPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    delete<T extends RequestDeleteArgs>(args: SelectSubset<T, RequestDeleteArgs<ExtArgs>>): Prisma__RequestClient<$Result.GetResult<Prisma.$RequestPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Update one Appeal.
-     * @param {AppealUpdateArgs} args - Arguments to update one Appeal.
+     * Update one Request.
+     * @param {RequestUpdateArgs} args - Arguments to update one Request.
      * @example
-     * // Update one Appeal
-     * const appeal = await prisma.appeal.update({
+     * // Update one Request
+     * const request = await prisma.request.update({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -1295,30 +1295,30 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends AppealUpdateArgs>(args: SelectSubset<T, AppealUpdateArgs<ExtArgs>>): Prisma__AppealClient<$Result.GetResult<Prisma.$AppealPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    update<T extends RequestUpdateArgs>(args: SelectSubset<T, RequestUpdateArgs<ExtArgs>>): Prisma__RequestClient<$Result.GetResult<Prisma.$RequestPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Delete zero or more Appeals.
-     * @param {AppealDeleteManyArgs} args - Arguments to filter Appeals to delete.
+     * Delete zero or more Requests.
+     * @param {RequestDeleteManyArgs} args - Arguments to filter Requests to delete.
      * @example
-     * // Delete a few Appeals
-     * const { count } = await prisma.appeal.deleteMany({
+     * // Delete a few Requests
+     * const { count } = await prisma.request.deleteMany({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      * 
      */
-    deleteMany<T extends AppealDeleteManyArgs>(args?: SelectSubset<T, AppealDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends RequestDeleteManyArgs>(args?: SelectSubset<T, RequestDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more Appeals.
+     * Update zero or more Requests.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {AppealUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {RequestUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
-     * // Update many Appeals
-     * const appeal = await prisma.appeal.updateMany({
+     * // Update many Requests
+     * const request = await prisma.request.updateMany({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -1328,14 +1328,14 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends AppealUpdateManyArgs>(args: SelectSubset<T, AppealUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends RequestUpdateManyArgs>(args: SelectSubset<T, RequestUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more Appeals and returns the data updated in the database.
-     * @param {AppealUpdateManyAndReturnArgs} args - Arguments to update many Appeals.
+     * Update zero or more Requests and returns the data updated in the database.
+     * @param {RequestUpdateManyAndReturnArgs} args - Arguments to update many Requests.
      * @example
-     * // Update many Appeals
-     * const appeal = await prisma.appeal.updateManyAndReturn({
+     * // Update many Requests
+     * const request = await prisma.request.updateManyAndReturn({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -1344,8 +1344,8 @@ export namespace Prisma {
      *   ]
      * })
      * 
-     * // Update zero or more Appeals and only return the `id`
-     * const appealWithIdOnly = await prisma.appeal.updateManyAndReturn({
+     * // Update zero or more Requests and only return the `id`
+     * const requestWithIdOnly = await prisma.request.updateManyAndReturn({
      *   select: { id: true },
      *   where: {
      *     // ... provide filter here
@@ -1358,56 +1358,56 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    updateManyAndReturn<T extends AppealUpdateManyAndReturnArgs>(args: SelectSubset<T, AppealUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$AppealPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+    updateManyAndReturn<T extends RequestUpdateManyAndReturnArgs>(args: SelectSubset<T, RequestUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RequestPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Create or update one Appeal.
-     * @param {AppealUpsertArgs} args - Arguments to update or create a Appeal.
+     * Create or update one Request.
+     * @param {RequestUpsertArgs} args - Arguments to update or create a Request.
      * @example
-     * // Update or create a Appeal
-     * const appeal = await prisma.appeal.upsert({
+     * // Update or create a Request
+     * const request = await prisma.request.upsert({
      *   create: {
-     *     // ... data to create a Appeal
+     *     // ... data to create a Request
      *   },
      *   update: {
      *     // ... in case it already exists, update
      *   },
      *   where: {
-     *     // ... the filter for the Appeal we want to update
+     *     // ... the filter for the Request we want to update
      *   }
      * })
      */
-    upsert<T extends AppealUpsertArgs>(args: SelectSubset<T, AppealUpsertArgs<ExtArgs>>): Prisma__AppealClient<$Result.GetResult<Prisma.$AppealPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    upsert<T extends RequestUpsertArgs>(args: SelectSubset<T, RequestUpsertArgs<ExtArgs>>): Prisma__RequestClient<$Result.GetResult<Prisma.$RequestPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
     /**
-     * Count the number of Appeals.
+     * Count the number of Requests.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {AppealCountArgs} args - Arguments to filter Appeals to count.
+     * @param {RequestCountArgs} args - Arguments to filter Requests to count.
      * @example
-     * // Count the number of Appeals
-     * const count = await prisma.appeal.count({
+     * // Count the number of Requests
+     * const count = await prisma.request.count({
      *   where: {
-     *     // ... the filter for the Appeals we want to count
+     *     // ... the filter for the Requests we want to count
      *   }
      * })
     **/
-    count<T extends AppealCountArgs>(
-      args?: Subset<T, AppealCountArgs>,
+    count<T extends RequestCountArgs>(
+      args?: Subset<T, RequestCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
           ? number
-          : GetScalarType<T['select'], AppealCountAggregateOutputType>
+          : GetScalarType<T['select'], RequestCountAggregateOutputType>
         : number
     >
 
     /**
-     * Allows you to perform aggregations operations on a Appeal.
+     * Allows you to perform aggregations operations on a Request.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {AppealAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @param {RequestAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
      * @example
      * // Ordered by age ascending
      * // Where email contains prisma.io
@@ -1427,13 +1427,13 @@ export namespace Prisma {
      *   take: 10,
      * })
     **/
-    aggregate<T extends AppealAggregateArgs>(args: Subset<T, AppealAggregateArgs>): Prisma.PrismaPromise<GetAppealAggregateType<T>>
+    aggregate<T extends RequestAggregateArgs>(args: Subset<T, RequestAggregateArgs>): Prisma.PrismaPromise<GetRequestAggregateType<T>>
 
     /**
-     * Group by Appeal.
+     * Group by Request.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {AppealGroupByArgs} args - Group by arguments.
+     * @param {RequestGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -1448,14 +1448,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends AppealGroupByArgs,
+      T extends RequestGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: AppealGroupByArgs['orderBy'] }
-        : { orderBy?: AppealGroupByArgs['orderBy'] },
+        ? { orderBy: RequestGroupByArgs['orderBy'] }
+        : { orderBy?: RequestGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -1504,20 +1504,20 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, AppealGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetAppealGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, RequestGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetRequestGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the Appeal model
+   * Fields of the Request model
    */
-  readonly fields: AppealFieldRefs;
+  readonly fields: RequestFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for Appeal.
+   * The delegate class that acts as a "Promise-like" for Request.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__AppealClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__RequestClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -1545,380 +1545,380 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the Appeal model
+   * Fields of the Request model
    */
-  interface AppealFieldRefs {
-    readonly id: FieldRef<"Appeal", 'String'>
-    readonly topic: FieldRef<"Appeal", 'String'>
-    readonly message: FieldRef<"Appeal", 'String'>
-    readonly resolution: FieldRef<"Appeal", 'String'>
-    readonly cancellation: FieldRef<"Appeal", 'String'>
-    readonly status: FieldRef<"Appeal", 'Status'>
-    readonly createdAt: FieldRef<"Appeal", 'DateTime'>
-    readonly updatedAt: FieldRef<"Appeal", 'DateTime'>
+  interface RequestFieldRefs {
+    readonly id: FieldRef<"Request", 'String'>
+    readonly topic: FieldRef<"Request", 'String'>
+    readonly message: FieldRef<"Request", 'String'>
+    readonly resolution: FieldRef<"Request", 'String'>
+    readonly cancellation: FieldRef<"Request", 'String'>
+    readonly status: FieldRef<"Request", 'Status'>
+    readonly createdAt: FieldRef<"Request", 'DateTime'>
+    readonly updatedAt: FieldRef<"Request", 'DateTime'>
   }
     
 
   // Custom InputTypes
   /**
-   * Appeal findUnique
+   * Request findUnique
    */
-  export type AppealFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type RequestFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Appeal
+     * Select specific fields to fetch from the Request
      */
-    select?: AppealSelect<ExtArgs> | null
+    select?: RequestSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Appeal
+     * Omit specific fields from the Request
      */
-    omit?: AppealOmit<ExtArgs> | null
+    omit?: RequestOmit<ExtArgs> | null
     /**
-     * Filter, which Appeal to fetch.
+     * Filter, which Request to fetch.
      */
-    where: AppealWhereUniqueInput
+    where: RequestWhereUniqueInput
   }
 
   /**
-   * Appeal findUniqueOrThrow
+   * Request findUniqueOrThrow
    */
-  export type AppealFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type RequestFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Appeal
+     * Select specific fields to fetch from the Request
      */
-    select?: AppealSelect<ExtArgs> | null
+    select?: RequestSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Appeal
+     * Omit specific fields from the Request
      */
-    omit?: AppealOmit<ExtArgs> | null
+    omit?: RequestOmit<ExtArgs> | null
     /**
-     * Filter, which Appeal to fetch.
+     * Filter, which Request to fetch.
      */
-    where: AppealWhereUniqueInput
+    where: RequestWhereUniqueInput
   }
 
   /**
-   * Appeal findFirst
+   * Request findFirst
    */
-  export type AppealFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type RequestFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Appeal
+     * Select specific fields to fetch from the Request
      */
-    select?: AppealSelect<ExtArgs> | null
+    select?: RequestSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Appeal
+     * Omit specific fields from the Request
      */
-    omit?: AppealOmit<ExtArgs> | null
+    omit?: RequestOmit<ExtArgs> | null
     /**
-     * Filter, which Appeal to fetch.
+     * Filter, which Request to fetch.
      */
-    where?: AppealWhereInput
+    where?: RequestWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Appeals to fetch.
+     * Determine the order of Requests to fetch.
      */
-    orderBy?: AppealOrderByWithRelationInput | AppealOrderByWithRelationInput[]
+    orderBy?: RequestOrderByWithRelationInput | RequestOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Appeals.
+     * Sets the position for searching for Requests.
      */
-    cursor?: AppealWhereUniqueInput
+    cursor?: RequestWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Appeals from the position of the cursor.
+     * Take `±n` Requests from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Appeals.
+     * Skip the first `n` Requests.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Appeals.
+     * Filter by unique combinations of Requests.
      */
-    distinct?: AppealScalarFieldEnum | AppealScalarFieldEnum[]
+    distinct?: RequestScalarFieldEnum | RequestScalarFieldEnum[]
   }
 
   /**
-   * Appeal findFirstOrThrow
+   * Request findFirstOrThrow
    */
-  export type AppealFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type RequestFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Appeal
+     * Select specific fields to fetch from the Request
      */
-    select?: AppealSelect<ExtArgs> | null
+    select?: RequestSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Appeal
+     * Omit specific fields from the Request
      */
-    omit?: AppealOmit<ExtArgs> | null
+    omit?: RequestOmit<ExtArgs> | null
     /**
-     * Filter, which Appeal to fetch.
+     * Filter, which Request to fetch.
      */
-    where?: AppealWhereInput
+    where?: RequestWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Appeals to fetch.
+     * Determine the order of Requests to fetch.
      */
-    orderBy?: AppealOrderByWithRelationInput | AppealOrderByWithRelationInput[]
+    orderBy?: RequestOrderByWithRelationInput | RequestOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Appeals.
+     * Sets the position for searching for Requests.
      */
-    cursor?: AppealWhereUniqueInput
+    cursor?: RequestWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Appeals from the position of the cursor.
+     * Take `±n` Requests from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Appeals.
+     * Skip the first `n` Requests.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Appeals.
+     * Filter by unique combinations of Requests.
      */
-    distinct?: AppealScalarFieldEnum | AppealScalarFieldEnum[]
+    distinct?: RequestScalarFieldEnum | RequestScalarFieldEnum[]
   }
 
   /**
-   * Appeal findMany
+   * Request findMany
    */
-  export type AppealFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type RequestFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Appeal
+     * Select specific fields to fetch from the Request
      */
-    select?: AppealSelect<ExtArgs> | null
+    select?: RequestSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Appeal
+     * Omit specific fields from the Request
      */
-    omit?: AppealOmit<ExtArgs> | null
+    omit?: RequestOmit<ExtArgs> | null
     /**
-     * Filter, which Appeals to fetch.
+     * Filter, which Requests to fetch.
      */
-    where?: AppealWhereInput
+    where?: RequestWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Appeals to fetch.
+     * Determine the order of Requests to fetch.
      */
-    orderBy?: AppealOrderByWithRelationInput | AppealOrderByWithRelationInput[]
+    orderBy?: RequestOrderByWithRelationInput | RequestOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing Appeals.
+     * Sets the position for listing Requests.
      */
-    cursor?: AppealWhereUniqueInput
+    cursor?: RequestWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Appeals from the position of the cursor.
+     * Take `±n` Requests from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Appeals.
+     * Skip the first `n` Requests.
      */
     skip?: number
-    distinct?: AppealScalarFieldEnum | AppealScalarFieldEnum[]
+    distinct?: RequestScalarFieldEnum | RequestScalarFieldEnum[]
   }
 
   /**
-   * Appeal create
+   * Request create
    */
-  export type AppealCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type RequestCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Appeal
+     * Select specific fields to fetch from the Request
      */
-    select?: AppealSelect<ExtArgs> | null
+    select?: RequestSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Appeal
+     * Omit specific fields from the Request
      */
-    omit?: AppealOmit<ExtArgs> | null
+    omit?: RequestOmit<ExtArgs> | null
     /**
-     * The data needed to create a Appeal.
+     * The data needed to create a Request.
      */
-    data: XOR<AppealCreateInput, AppealUncheckedCreateInput>
+    data: XOR<RequestCreateInput, RequestUncheckedCreateInput>
   }
 
   /**
-   * Appeal createMany
+   * Request createMany
    */
-  export type AppealCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type RequestCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many Appeals.
+     * The data used to create many Requests.
      */
-    data: AppealCreateManyInput | AppealCreateManyInput[]
+    data: RequestCreateManyInput | RequestCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * Appeal createManyAndReturn
+   * Request createManyAndReturn
    */
-  export type AppealCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type RequestCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Appeal
+     * Select specific fields to fetch from the Request
      */
-    select?: AppealSelectCreateManyAndReturn<ExtArgs> | null
+    select?: RequestSelectCreateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Appeal
+     * Omit specific fields from the Request
      */
-    omit?: AppealOmit<ExtArgs> | null
+    omit?: RequestOmit<ExtArgs> | null
     /**
-     * The data used to create many Appeals.
+     * The data used to create many Requests.
      */
-    data: AppealCreateManyInput | AppealCreateManyInput[]
+    data: RequestCreateManyInput | RequestCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * Appeal update
+   * Request update
    */
-  export type AppealUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type RequestUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Appeal
+     * Select specific fields to fetch from the Request
      */
-    select?: AppealSelect<ExtArgs> | null
+    select?: RequestSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Appeal
+     * Omit specific fields from the Request
      */
-    omit?: AppealOmit<ExtArgs> | null
+    omit?: RequestOmit<ExtArgs> | null
     /**
-     * The data needed to update a Appeal.
+     * The data needed to update a Request.
      */
-    data: XOR<AppealUpdateInput, AppealUncheckedUpdateInput>
+    data: XOR<RequestUpdateInput, RequestUncheckedUpdateInput>
     /**
-     * Choose, which Appeal to update.
+     * Choose, which Request to update.
      */
-    where: AppealWhereUniqueInput
+    where: RequestWhereUniqueInput
   }
 
   /**
-   * Appeal updateMany
+   * Request updateMany
    */
-  export type AppealUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type RequestUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update Appeals.
+     * The data used to update Requests.
      */
-    data: XOR<AppealUpdateManyMutationInput, AppealUncheckedUpdateManyInput>
+    data: XOR<RequestUpdateManyMutationInput, RequestUncheckedUpdateManyInput>
     /**
-     * Filter which Appeals to update
+     * Filter which Requests to update
      */
-    where?: AppealWhereInput
+    where?: RequestWhereInput
     /**
-     * Limit how many Appeals to update.
+     * Limit how many Requests to update.
      */
     limit?: number
   }
 
   /**
-   * Appeal updateManyAndReturn
+   * Request updateManyAndReturn
    */
-  export type AppealUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type RequestUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Appeal
+     * Select specific fields to fetch from the Request
      */
-    select?: AppealSelectUpdateManyAndReturn<ExtArgs> | null
+    select?: RequestSelectUpdateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Appeal
+     * Omit specific fields from the Request
      */
-    omit?: AppealOmit<ExtArgs> | null
+    omit?: RequestOmit<ExtArgs> | null
     /**
-     * The data used to update Appeals.
+     * The data used to update Requests.
      */
-    data: XOR<AppealUpdateManyMutationInput, AppealUncheckedUpdateManyInput>
+    data: XOR<RequestUpdateManyMutationInput, RequestUncheckedUpdateManyInput>
     /**
-     * Filter which Appeals to update
+     * Filter which Requests to update
      */
-    where?: AppealWhereInput
+    where?: RequestWhereInput
     /**
-     * Limit how many Appeals to update.
+     * Limit how many Requests to update.
      */
     limit?: number
   }
 
   /**
-   * Appeal upsert
+   * Request upsert
    */
-  export type AppealUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type RequestUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Appeal
+     * Select specific fields to fetch from the Request
      */
-    select?: AppealSelect<ExtArgs> | null
+    select?: RequestSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Appeal
+     * Omit specific fields from the Request
      */
-    omit?: AppealOmit<ExtArgs> | null
+    omit?: RequestOmit<ExtArgs> | null
     /**
-     * The filter to search for the Appeal to update in case it exists.
+     * The filter to search for the Request to update in case it exists.
      */
-    where: AppealWhereUniqueInput
+    where: RequestWhereUniqueInput
     /**
-     * In case the Appeal found by the `where` argument doesn't exist, create a new Appeal with this data.
+     * In case the Request found by the `where` argument doesn't exist, create a new Request with this data.
      */
-    create: XOR<AppealCreateInput, AppealUncheckedCreateInput>
+    create: XOR<RequestCreateInput, RequestUncheckedCreateInput>
     /**
-     * In case the Appeal was found with the provided `where` argument, update it with this data.
+     * In case the Request was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<AppealUpdateInput, AppealUncheckedUpdateInput>
+    update: XOR<RequestUpdateInput, RequestUncheckedUpdateInput>
   }
 
   /**
-   * Appeal delete
+   * Request delete
    */
-  export type AppealDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type RequestDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Appeal
+     * Select specific fields to fetch from the Request
      */
-    select?: AppealSelect<ExtArgs> | null
+    select?: RequestSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Appeal
+     * Omit specific fields from the Request
      */
-    omit?: AppealOmit<ExtArgs> | null
+    omit?: RequestOmit<ExtArgs> | null
     /**
-     * Filter which Appeal to delete.
+     * Filter which Request to delete.
      */
-    where: AppealWhereUniqueInput
+    where: RequestWhereUniqueInput
   }
 
   /**
-   * Appeal deleteMany
+   * Request deleteMany
    */
-  export type AppealDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type RequestDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Appeals to delete
+     * Filter which Requests to delete
      */
-    where?: AppealWhereInput
+    where?: RequestWhereInput
     /**
-     * Limit how many Appeals to delete.
+     * Limit how many Requests to delete.
      */
     limit?: number
   }
 
   /**
-   * Appeal without action
+   * Request without action
    */
-  export type AppealDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type RequestDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Appeal
+     * Select specific fields to fetch from the Request
      */
-    select?: AppealSelect<ExtArgs> | null
+    select?: RequestSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Appeal
+     * Omit specific fields from the Request
      */
-    omit?: AppealOmit<ExtArgs> | null
+    omit?: RequestOmit<ExtArgs> | null
   }
 
 
@@ -1936,7 +1936,7 @@ export namespace Prisma {
   export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
 
 
-  export const AppealScalarFieldEnum: {
+  export const RequestScalarFieldEnum: {
     id: 'id',
     topic: 'topic',
     message: 'message',
@@ -1947,7 +1947,7 @@ export namespace Prisma {
     updatedAt: 'updatedAt'
   };
 
-  export type AppealScalarFieldEnum = (typeof AppealScalarFieldEnum)[keyof typeof AppealScalarFieldEnum]
+  export type RequestScalarFieldEnum = (typeof RequestScalarFieldEnum)[keyof typeof RequestScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -2038,21 +2038,21 @@ export namespace Prisma {
    */
 
 
-  export type AppealWhereInput = {
-    AND?: AppealWhereInput | AppealWhereInput[]
-    OR?: AppealWhereInput[]
-    NOT?: AppealWhereInput | AppealWhereInput[]
-    id?: StringFilter<"Appeal"> | string
-    topic?: StringFilter<"Appeal"> | string
-    message?: StringFilter<"Appeal"> | string
-    resolution?: StringNullableFilter<"Appeal"> | string | null
-    cancellation?: StringNullableFilter<"Appeal"> | string | null
-    status?: EnumStatusFilter<"Appeal"> | $Enums.Status
-    createdAt?: DateTimeFilter<"Appeal"> | Date | string
-    updatedAt?: DateTimeFilter<"Appeal"> | Date | string
+  export type RequestWhereInput = {
+    AND?: RequestWhereInput | RequestWhereInput[]
+    OR?: RequestWhereInput[]
+    NOT?: RequestWhereInput | RequestWhereInput[]
+    id?: StringFilter<"Request"> | string
+    topic?: StringFilter<"Request"> | string
+    message?: StringFilter<"Request"> | string
+    resolution?: StringNullableFilter<"Request"> | string | null
+    cancellation?: StringNullableFilter<"Request"> | string | null
+    status?: EnumStatusFilter<"Request"> | $Enums.Status
+    createdAt?: DateTimeFilter<"Request"> | Date | string
+    updatedAt?: DateTimeFilter<"Request"> | Date | string
   }
 
-  export type AppealOrderByWithRelationInput = {
+  export type RequestOrderByWithRelationInput = {
     id?: SortOrder
     topic?: SortOrder
     message?: SortOrder
@@ -2063,21 +2063,21 @@ export namespace Prisma {
     updatedAt?: SortOrder
   }
 
-  export type AppealWhereUniqueInput = Prisma.AtLeast<{
+  export type RequestWhereUniqueInput = Prisma.AtLeast<{
     id?: string
-    AND?: AppealWhereInput | AppealWhereInput[]
-    OR?: AppealWhereInput[]
-    NOT?: AppealWhereInput | AppealWhereInput[]
-    topic?: StringFilter<"Appeal"> | string
-    message?: StringFilter<"Appeal"> | string
-    resolution?: StringNullableFilter<"Appeal"> | string | null
-    cancellation?: StringNullableFilter<"Appeal"> | string | null
-    status?: EnumStatusFilter<"Appeal"> | $Enums.Status
-    createdAt?: DateTimeFilter<"Appeal"> | Date | string
-    updatedAt?: DateTimeFilter<"Appeal"> | Date | string
+    AND?: RequestWhereInput | RequestWhereInput[]
+    OR?: RequestWhereInput[]
+    NOT?: RequestWhereInput | RequestWhereInput[]
+    topic?: StringFilter<"Request"> | string
+    message?: StringFilter<"Request"> | string
+    resolution?: StringNullableFilter<"Request"> | string | null
+    cancellation?: StringNullableFilter<"Request"> | string | null
+    status?: EnumStatusFilter<"Request"> | $Enums.Status
+    createdAt?: DateTimeFilter<"Request"> | Date | string
+    updatedAt?: DateTimeFilter<"Request"> | Date | string
   }, "id">
 
-  export type AppealOrderByWithAggregationInput = {
+  export type RequestOrderByWithAggregationInput = {
     id?: SortOrder
     topic?: SortOrder
     message?: SortOrder
@@ -2086,26 +2086,26 @@ export namespace Prisma {
     status?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    _count?: AppealCountOrderByAggregateInput
-    _max?: AppealMaxOrderByAggregateInput
-    _min?: AppealMinOrderByAggregateInput
+    _count?: RequestCountOrderByAggregateInput
+    _max?: RequestMaxOrderByAggregateInput
+    _min?: RequestMinOrderByAggregateInput
   }
 
-  export type AppealScalarWhereWithAggregatesInput = {
-    AND?: AppealScalarWhereWithAggregatesInput | AppealScalarWhereWithAggregatesInput[]
-    OR?: AppealScalarWhereWithAggregatesInput[]
-    NOT?: AppealScalarWhereWithAggregatesInput | AppealScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"Appeal"> | string
-    topic?: StringWithAggregatesFilter<"Appeal"> | string
-    message?: StringWithAggregatesFilter<"Appeal"> | string
-    resolution?: StringNullableWithAggregatesFilter<"Appeal"> | string | null
-    cancellation?: StringNullableWithAggregatesFilter<"Appeal"> | string | null
-    status?: EnumStatusWithAggregatesFilter<"Appeal"> | $Enums.Status
-    createdAt?: DateTimeWithAggregatesFilter<"Appeal"> | Date | string
-    updatedAt?: DateTimeWithAggregatesFilter<"Appeal"> | Date | string
+  export type RequestScalarWhereWithAggregatesInput = {
+    AND?: RequestScalarWhereWithAggregatesInput | RequestScalarWhereWithAggregatesInput[]
+    OR?: RequestScalarWhereWithAggregatesInput[]
+    NOT?: RequestScalarWhereWithAggregatesInput | RequestScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"Request"> | string
+    topic?: StringWithAggregatesFilter<"Request"> | string
+    message?: StringWithAggregatesFilter<"Request"> | string
+    resolution?: StringNullableWithAggregatesFilter<"Request"> | string | null
+    cancellation?: StringNullableWithAggregatesFilter<"Request"> | string | null
+    status?: EnumStatusWithAggregatesFilter<"Request"> | $Enums.Status
+    createdAt?: DateTimeWithAggregatesFilter<"Request"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"Request"> | Date | string
   }
 
-  export type AppealCreateInput = {
+  export type RequestCreateInput = {
     id?: string
     topic: string
     message: string
@@ -2116,7 +2116,7 @@ export namespace Prisma {
     updatedAt?: Date | string
   }
 
-  export type AppealUncheckedCreateInput = {
+  export type RequestUncheckedCreateInput = {
     id?: string
     topic: string
     message: string
@@ -2127,7 +2127,7 @@ export namespace Prisma {
     updatedAt?: Date | string
   }
 
-  export type AppealUpdateInput = {
+  export type RequestUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     topic?: StringFieldUpdateOperationsInput | string
     message?: StringFieldUpdateOperationsInput | string
@@ -2138,7 +2138,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type AppealUncheckedUpdateInput = {
+  export type RequestUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     topic?: StringFieldUpdateOperationsInput | string
     message?: StringFieldUpdateOperationsInput | string
@@ -2149,7 +2149,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type AppealCreateManyInput = {
+  export type RequestCreateManyInput = {
     id?: string
     topic: string
     message: string
@@ -2160,7 +2160,7 @@ export namespace Prisma {
     updatedAt?: Date | string
   }
 
-  export type AppealUpdateManyMutationInput = {
+  export type RequestUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
     topic?: StringFieldUpdateOperationsInput | string
     message?: StringFieldUpdateOperationsInput | string
@@ -2171,7 +2171,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type AppealUncheckedUpdateManyInput = {
+  export type RequestUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
     topic?: StringFieldUpdateOperationsInput | string
     message?: StringFieldUpdateOperationsInput | string
@@ -2235,7 +2235,7 @@ export namespace Prisma {
     nulls?: NullsOrder
   }
 
-  export type AppealCountOrderByAggregateInput = {
+  export type RequestCountOrderByAggregateInput = {
     id?: SortOrder
     topic?: SortOrder
     message?: SortOrder
@@ -2246,7 +2246,7 @@ export namespace Prisma {
     updatedAt?: SortOrder
   }
 
-  export type AppealMaxOrderByAggregateInput = {
+  export type RequestMaxOrderByAggregateInput = {
     id?: SortOrder
     topic?: SortOrder
     message?: SortOrder
@@ -2257,7 +2257,7 @@ export namespace Prisma {
     updatedAt?: SortOrder
   }
 
-  export type AppealMinOrderByAggregateInput = {
+  export type RequestMinOrderByAggregateInput = {
     id?: SortOrder
     topic?: SortOrder
     message?: SortOrder

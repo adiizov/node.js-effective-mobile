@@ -120,7 +120,7 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
   Serializable: 'Serializable'
 });
 
-exports.Prisma.AppealScalarFieldEnum = {
+exports.Prisma.RequestScalarFieldEnum = {
   id: 'id',
   topic: 'topic',
   message: 'message',
@@ -153,7 +153,7 @@ exports.Status = exports.$Enums.Status = {
 };
 
 exports.Prisma.ModelName = {
-  Appeal: 'Appeal'
+  Request: 'Request'
 };
 
 /**
