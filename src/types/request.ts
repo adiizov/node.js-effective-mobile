@@ -10,3 +10,8 @@ export interface IResponseComplete {
 export interface IResponseCancel {
     cancellation?: string;
 }
+
+export interface IRequestGet {
+    startDate?: string;
+    endDate?: string;
+}

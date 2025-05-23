@@ -1,8 +1,8 @@
 import { Request, Response, NextFunction } from "express";
 import prisma from "../prisma-client";
-import {RequestCreate} from "../schemas/request.schema";
+import { RequestCreate, RequestGet } from '../schemas/request.schema';
 import {parseZodErrors} from "../lib/parseZodErrors";
-import {IRequestCreate, IResponseCancel, IResponseComplete} from "../types/request";
+import { IRequestCreate, IRequestGet, IResponseCancel, IResponseComplete } from '../types/request';
 
 export const createRequest = async (req: Request, res: Response, next: NextFunction) => {
     try {
@@ -100,16 +100,42 @@ export const cancelAllInProgress = async (req: Request, res: Response, next: Nex
 
 export const getRequests = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const { startDate, endDate } = req.query;
+    const queries = req.query as IRequestGet;
+
+    const parsed = RequestGet.safeParse(queries);
+
+    if (!parsed.success) {
+      const zodErrors = parseZodErrors(parsed.error.issues)
+      res.status(400).json(zodErrors);
+      return
+    }
+
+    const {startDate, endDate} = parsed.data
+
+    const whereConditions: any = {};
+
+    if (startDate || endDate) {
+      whereConditions.createdAt = {};
+
+      if (startDate && !endDate) {
+        const start = new Date(startDate);
+        const end = new Date(startDate);
+        end.setHours(23, 59, 59, 999);
+        whereConditions.createdAt.gte = start;
+        whereConditions.createdAt.lte = end;
+      }
+      else if (startDate && endDate) {
+        whereConditions.createdAt.gte = new Date(startDate);
+        whereConditions.createdAt.lte = new Date(endDate);
+      }
+    }
+
+
     const filteredRequests = await prisma.request.findMany({
-      where: {
-        createdAt: {
-          lte: new Date(startDate),
-          gte: new Date(endDate),
-        },
-      },
-    })
-    res.status(200).json({filteredRequests});
+      where: whereConditions,
+    });
+
+    res.status(200).json({ data: filteredRequests });
   } catch (error) {
     next(error);
   }
