@@ -97,3 +97,20 @@ export const cancelAllInProgress = async (req: Request, res: Response, next: Nex
     next(error);
   }
 }
+
+export const getRequests = async (req: Request, res: Response, next: NextFunction) => {
+  try {
+    const { startDate, endDate } = req.query;
+    const filteredRequests = await prisma.request.findMany({
+      where: {
+        createdAt: {
+          lte: new Date(startDate),
+          gte: new Date(endDate),
+        },
+      },
+    })
+    res.status(200).json({filteredRequests});
+  } catch (error) {
+    next(error);
+  }
+}
