@@ -86,4 +86,14 @@ export const cancelRequest = async (req: Request, res: Response, next: NextFunct
     }
 }
 
-
+export const cancelAllInProgress = async (req: Request, res: Response, next: NextFunction) => {
+  try {
+    const allRequestsInProgress = await prisma.request.updateMany({data: {status: "CANCELED"}, where: {status: "INPROGRESS"}});
+    if(!allRequestsInProgress.count) {
+      res.status(404).json({"message": "requests not found"})
+    }
+    res.status(200).json({"message": `${allRequestsInProgress.count} requests canceled`});
+  } catch(error) {
+    next(error);
+  }
+}
