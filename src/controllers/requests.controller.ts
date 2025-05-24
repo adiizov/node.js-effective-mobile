@@ -15,7 +15,7 @@ export const createRequest = async (req: Request, res: Response, next: NextFunct
             return
         }
         await prisma.request.create({data: parsed.data})
-        res.status(201).json("New request created");
+        res.status(201).json({message: "New request created"});
     } catch (error) {
         next(error);
     }
@@ -31,7 +31,7 @@ export const startProcessingRequest = async (req: Request, res: Response, next: 
             res.status(400).json({"message": "request already in progress"})
         }
         await prisma.request.update({where: {id}, data: {status: "INPROGRESS"},})
-        res.status(200).json({"message": "request started processing"});
+        res.status(200).json({message: "request started processing"});
     } catch (error) {
         next(error);
     }
